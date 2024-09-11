@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "first_dishes",
+        "caption": "Перші страви",
+        "imageUrl": "https://andriynykytiuk.github.io/allegroSite/allegro__3.3/secondLayout.html",
+        "order": 10,
+        "dishes": [
+            {
+                "id": 1,
+                "name": "borsch",
+                "caption": "Борщ",
+                "description": "На свинячих реберцях\n Калорійність - на всі гроші",
+                "imageUrl": "https://gurman.com.ua/wp-content/uploads/2023/03/IMG_7073.webp",
+                "price": 70.0,
+                "order": 10
+            },
+            {
+                "id": 2,
+                "name": "green_borsch",
+                "caption": "Борщ зелений",
+                "description": "Дуже смачний\n Калорійність - так собі",
+                "imageUrl": "https://klopotenko.com/wp-content/uploads/2022/04/zelenyy-borshch-zi-shpynatom-img-1000x600.jpg",
+                "price": 64.99,
+                "order": 20
+            },
+            {
+                "id": 3,
+                "name": "fish_soup",
+                "caption": "Рибна юшка",
+                "description": "На форелі\n Калорійність - лайт",
+                "imageUrl": "https://images.unian.net/photos/2021_04/1617620232-2719.jpg",
+                "price": 80.5,
+                "order": 30
+            },
+            {
+                "id": 4,
+                "name": "mushroom_soup",
+                "caption": "Грибна юшка",
+                "description": "З білих карпатських грибів\n Калорійність - лайт",
+                "imageUrl": "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
+                "price": 70.0,
+                "order": 40
+            },
+            {
+                "id": 5,
+                "name": "borsch",
+                "caption": "Борщ",
+                "description": "100 видів м'яса\n Калорійність - смерть на місці",
+                "imageUrl": "https://bazylik.com.ua/wp-content/uploads/2024/01/image11_retsept-solianka-zbirna-miasna.webp",
+                "price": 100.0,
+                "order": 50
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": null,
+        "caption": "М'ясні страви",
+        "imageUrl": "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+        "order": 20,
+        "dishes": [
+            {
+                "id": 6,
+                "name": "kyiv_style_meat_ball",
+                "caption": "Котлета по-київськи",
+                "description": "Курятина, масло вершкове, кляр",
+                "imageUrl": "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+                "price": 110.0,
+                "order": 10
+            },
+            {
+                "id": 7,
+                "name": "home_style_meat_boal",
+                "caption": "Котлета по-домашньому",
+                "description": "Смакує з пюрехою",
+                "imageUrl": "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+                "price": 65.99,
+                "order": 20
+            },
+            {
+                "id": 8,
+                "name": "pork_ribs",
+                "caption": "Свинячі реберця",
+                "description": "З журавлиновим соусом",
+                "imageUrl": "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+                "price": 200.0,
+                "order": 30
+            },
+            {
+                "id": 9,
+                "name": "chicken_chop",
+                "caption": "Куряча відбивна",
+                "description": "Куряча відбивна в клярі\n Топ за свої гроші",
+                "imageUrl": "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+                "price": 70.0,
+                "order": 40
+            },
+            {
+                "id": 10,
+                "name": "beef_steak",
+                "caption": "Борщ",
+                "description": "З мармурової яловичини, відчуй себе мажором",
+                "imageUrl": "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+                "price": 700.0,
+                "order": 50
+            }
+        ]
+    }
+]

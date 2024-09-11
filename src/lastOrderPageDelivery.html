@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      <main class="basket__page page">
+        <div class="section__top-page aproove">
+          <div class="aproove__container">
+            <div class="aproove__header">
+              <div class="aproove__back">
+                <a href="aprooveOrderPage.html"
+                  ><img src="@img/arrow.svg" alt=""
+                /></a>
+              </div>
+              <div class="aproove__logo">
+                <a href="#"><img src="@img/logoAllegro.svg" alt="" /></a>
+              </div>
+            </div>
+            <div class="aproove__wrap">
+              <div class="aproove__title">
+                <h2> Підтвердження замовлення </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="page__orders orders">
+          <div class="orders__container">
+            <div class="orders__box"> тут будуть замовлення</div>
+          </div>
+        </section>
+        <section class="page__delivery-options options">
+          <div class="options__container">
+            <div class="options__wrap">
+              <div class="options__curier curier">
+                <div class="curier__title">
+                  <h4>спосіб доставки</h4>
+                </div>
+                <div class="curier__menu delivery">
+			<select name="delivery" class="delivery__form">
+				<option data-asset="./img/motoNew.svg" value="1" selected><img src="./img/moto.png" alt="">Доставка кур’єром</option>
+				<option data-asset="./img/koshyk.svg"  value="2">Самовивіз</option>
+			</select>
+                  <!--<div class="curier__select select">
+                    <div class="select__selected">
+                      <span class="select__text">Виберіть опцію</span>
+                      <img src="" alt="Selected" class="select__image" />
+                    </div>
+                    <div class="select__items select__items-hide">
+                      <div class="select__item" data-image="@img/moto.png"></div>
+                        доставка кур’єром</div
+                      >
+                      <div class="select__item" data-image="@img/samovyviz.svg"
+                        >самовивіз</div
+                      >
+                    </div>
+                  </div>-->
+                </div>
+
+                <div class="curier__time">
+			
+			<form>
+  				<label for="time">Час для отримання замовлення</label>
+  				<input type="time" id="timeInput" name="time" step="600" min="09:00" max="18:00" />
+			</form>
+
+                </div>
+                <div class="curier__adress adress">
+                  <div class="adress__adres-delivery">
+                    <h4> адреса доставки</h4>
+                  </div>
+                  <div class="adress__building building">
+                    <h3>Корпус</h3>
+                    <div class="building__input">
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Ошибка"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="adress__floor floor">
+                    <h3>Поверх</h3>
+                    <div class="floor__input">
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Ошибка"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="adress__office">
+                    <h3>Офіс</h3>
+                    <div class="adress__input">
+                      <input
+                        autocomplete="off"
+                        type="text"
+                        name="form[]"
+                        data-error="Ошибка"
+                        placeholder=""
+                    /></div>
+                  </div>
+                </div>
+                <div class="curier__textarea texarea">
+                  <div class="textarea__title">
+                    <h3>Коментар до замовлення</h3>
+                  </div>
+                  <textarea class="textarea__zone" id=""></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page__contacts contacts">
+          <div class="page__container">
+            <div class="contacts__wrap">
+              <div class="contacts__title">
+                <h3>контактні дані</h3>
+              </div>
+              <div class="contact__name name">
+                <div class="name__title">
+                  <h4>Ім`я</h4>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="form[]"
+                    data-error="Ошибка"
+                    placeholder=" ваше імя"
+                    class="input"
+                  />
+                </div>
+              </div>
+              <div class="contact__number number">
+                <div class="number__title">
+                  <h4>Ваш номер телефону</h4>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="form[]"
+                    data-error="Ошибка"
+                    placeholder="Ввудіть номер телефону"
+                    class="input"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="page__aproove aproove">
+              <button class="aproove__btn"> підтвердити</button>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

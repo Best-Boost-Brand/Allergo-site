@@ -1,0 +1,135 @@
+.menu {
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		
+		@media (max-width: 3300px) {
+			position: fixed;
+			z-index: 1;
+			max-width: 320px;
+			width: 100%;
+			height: 50%;
+			left:-100%;
+			top: 50px;
+			overflow: auto;
+			padding: toRem(50) toRem(35) toRem(15) toRem(30);
+			transition: left 0.3s;
+			background-color: #f3f1f1;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: toRem(70);
+				left: -100%;
+				top: 0;
+				transition: left 0.3s;
+				z-index: 35;
+			}
+			.menu-open & {
+				top: -2%;
+				left: 14%; // наскільки вилітає меню 
+				@media (max-width:767px) {
+					left:0;
+					top: 2%;
+					height: 70%;
+				}
+				&::before {
+					left: 0;
+				}
+
+				&__wrapp{
+					position: relative;
+		
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		@media (max-width: 3200px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	// .menu__item
+	&__item {
+		
+		
+		
+	}
+	// .menu__link
+	&__link {
+		
+	
+	}
+}
+
+//Burger Icon
+.icon-menu {
+	display: none;
+	
+	@media (max-width: 767px) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 45;
+		@media (any-hover: none) {
+			cursor: pointer;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(3);
+			
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+			display: none;
+			
+		}
+		&::after {
+			bottom: 0;
+			width: 70%;
+			left: 0;
+			border-radius: 4px;
+		}
+		span {
+			top: calc(50% - toRem(1));
+			border-radius: 4px;
+		}
+		.menu-open & {
+
+			background-color:#FF831D;
+			width: 30px;
+			height: 30px;
+			border-radius: 5px;
+			span {
+				
+				transform: rotate(-45deg);
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(2));
+				transform: rotate(-45deg);
+				//display: block;
+			}
+			&::after {
+				bottom: calc(50% - toRem(2.2));
+				transform: rotate(45deg);
+				width: 100%;
+			}
+		}
+	}
+}

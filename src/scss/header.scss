@@ -1,0 +1,331 @@
+.header {
+	
+	min-height:6vh;
+	background-color: #f3f1f1;
+	position: fixed; // фікс хедера
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 15;
+		
+	// .header__container
+
+	&__container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	
+	}
+
+	// .header__wrap
+
+	&__wrap {
+		display: flex;
+		align-items:flex-start;
+		justify-content: space-between;
+		margin-top: 5px;
+		position: absolute;// фікс хедера але можна і абсолют
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0px 15px;
+		z-index: 15;
+		
+
+	}
+
+	// .header__menu
+
+	&__menu {
+		
+	}
+
+	// .header__logo
+
+	&__logo { 
+	
+		
+		// маніпуляції з розтагуванням лого по середині
+		
+		//margin-right: 430px;
+		flex-grow: 0;
+		background-size: contain;
+		position: relative;
+		z-index: 10;
+		padding: 15px 50px 10px 50px;
+		background: #f3f1f1;
+		border-radius: 50% ;
+		img{
+			transition: all 0.3s;
+			&:hover{
+				transition: all 0.3s;
+				transform: scale(1.06);
+			}
+		}
+		@media (max-width:767px) {
+			margin-right:0px;
+		}
+		//border-bottom-left-radius: 190px;
+		// border-bottom-right-radius: 190px;
+		
+	}
+
+	// .header__basket
+
+	&__basket {
+		position: relative;
+		z-index: 20;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s;
+		width: 37px;
+		height: 37px;
+		&:hover{
+			background-color:#FF831D;
+			
+			transition: all 0.3s;
+		}
+		img{
+			position: absolute;
+			top: 1vh;
+			width: 20px;
+			height: 20px;
+			
+		}
+		a{
+			
+			:hover{
+				
+				transition: all 0.3s;
+			}
+		}
+	}
+}
+.menu {
+	margin-top: 5px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	// .menu__body
+
+
+	&__body {
+		padding-left: 40px;
+		@media (max-width:767px){
+			padding-top: 90px;
+		}
+	}
+
+	// .menu__title
+
+	&__title {
+	font-family: Montserrat;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 18.29px;
+	text-align: left;
+	
+	
+
+	}
+	&__subtitle{
+		margin-bottom: 10px;
+		font-weight: 600;
+		font-size: 16px;
+	}
+	&__subtitles{
+		margin-bottom: 10px;
+		font-weight: 800;
+		font-size: 16px;
+	}
+	// .menu__adres
+
+	&__adres {
+
+
+		border-bottom: solid 1px #FF831D;
+		margin-bottom: 20px;
+		p{
+			padding-bottom: 5px;
+		}
+
+	}
+
+	// .menu__phone
+
+	&__phone {
+		position: relative;
+		margin-bottom: 20px;
+		margin-left: 25px;
+		font-weight: 700;
+		a{
+			transition: all 0.3s;
+			margin-left: 5px;
+			&:hover{
+				color: #FF831D;
+				transition: all 0.3s;
+			}
+		}
+		::before{
+			content: "";
+			background: url('@img/phone.svg')no-repeat center;
+			position: absolute;
+			background-size: cover;
+			top: -2px;
+			left: -23px;
+			width: 20px;
+			height: 20px;
+
+		}
+		
+	}
+
+	// .menu__social
+
+	&__social {
+		position: relative;
+		margin-bottom: 20px;
+		font-family: Montserrat;
+		font-size: 18px;
+		
+		line-height: 12.19px;
+		text-align: left;
+		
+		h4{
+			margin-bottom: 20px;
+			
+		font-weight: 600;
+		font-size: 16px;
+		}
+
+		::before{
+			content: "";
+			background: url('@img/insta.svg')no-repeat center;
+			position: absolute;
+			background-size: cover;
+			top: 30px;
+			left: 0px;
+			width: 20px;
+			height: 20px;
+
+		}
+		a{
+			
+			transition: all 0.3s;
+			margin-left: 5px;
+			&:hover{
+				color: #FF831D;
+				transition: all 0.3s;
+			}
+		}
+	}
+
+	// .menu__information
+
+	&__information {
+		h4{
+			font-weight: 600;
+		}
+	}
+}
+.social {
+
+	// .social__insta
+
+	&__insta {
+		margin-left: 25px;
+	}
+}
+.info {
+	
+	
+
+	&__company {
+		position: relative;
+		margin-bottom: 15px;
+		border-bottom: solid 1px #FF831D;
+		a{
+			transition: all 0.3s;
+			margin-left: 5px;
+			&:hover{
+				color: #FF831D;
+				transition: all 0.3s;
+			}
+		}
+		p{
+			padding-bottom: 8px;
+			margin-left: 25px;
+		}
+		::before{
+			content: "";
+			background: url('@img/info.svg')no-repeat center;
+			position: absolute;
+			background-size: contain;
+			top: -3px;
+			left: 0px;
+			width: 20px;
+			height: 20px;
+
+		}
+	}
+
+	// .info__police
+
+	&__police {
+		position: relative;
+		margin-bottom: 15px;
+		border-bottom: solid 1px #FF831D;
+		a{
+			transition: all 0.3s;
+			margin-left: 5px;
+			&:hover{
+				color: #FF831D;
+				transition: all 0.3s;
+			}
+		}
+		p{
+			padding-bottom: 8px;
+			margin-left: 25px;
+		}
+		::before{
+			content: "";
+			background: url('@img/list.svg')no-repeat center;
+			position: absolute;
+			background-size: contain;
+			top: -3px;
+			left: 0px;
+			width: 20px;
+			height: 20px;
+
+		}
+	}
+
+	// .info__condition
+
+	&__condition {
+		position: relative;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		
+		a{
+			transition: all 0.3s;
+			margin-left: 5px;
+			&:hover{
+				color: #FF831D;
+				transition: all 0.3s;
+			}
+		}
+		::before{
+			content: "";
+			background: url('@img/list.svg')no-repeat center;
+			position: absolute;
+			background-size: contain;
+			top: -3px;
+			left: -23px;
+			width: 20px;
+			height: 20px;
+
+		}
+	}
+}
+

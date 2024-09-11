@@ -1,0 +1,43 @@
+.section__top-page {
+  background-color: #f3f1f1;
+}
+
+.aproove__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.aproove__title {
+  padding-top: 6vh;
+  width: 100%;
+}
+.aproove__title h2 {
+  font-family: "Montserrat";
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 32.91px;
+  text-align: center;
+}
+.aproove__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+.aproove__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
