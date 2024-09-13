@@ -36,9 +36,9 @@
                   <h4>спосіб доставки</h4>
                 </div>
                 <div class="curier__menu delivery">
-			<select name="delivery" class="delivery__form">
-				<option data-asset="./img/motoNew.svg" value="1" selected><img src="./img/moto.png" alt="">Доставка кур’єром</option>
-				<option data-asset="./img/koshyk.svg"  value="2">Самовивіз</option>
+			<select id="deliverySelect" name="delivery" class="delivery__form">
+				<option class="delivery__curier" data-asset="./img/motoNew.svg" value="1" selected><img src="./img/moto.png" alt="">Доставка кур’єром</option>
+				<option class="delivery__selfpickup" data-asset="./img/koshyk.svg"  value="2">Самовивіз</option>
 			</select>
                   <!--<div class="curier__select select">
                     <div class="select__selected">
@@ -114,6 +114,13 @@
             </div>
           </div>
         </section>
+          <section id="map" class="page__map map">
+            <div class="map__container">
+              <div class="map__wrap">
+                <img class="map__image ibg" src="img/map.png" alt="">
+              </div>
+            </div>
+          </section>
         <section class="page__contacts contacts">
           <div class="page__container">
             <div class="contacts__wrap">

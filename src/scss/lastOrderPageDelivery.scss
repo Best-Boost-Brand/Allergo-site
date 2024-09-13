@@ -90,7 +90,7 @@
 
     &__select {
         position: relative;
-        font-family: Montserrat, sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 20px;
         font-weight: 700;
         line-height: 24px;
@@ -399,4 +399,21 @@
         padding: 5px 10px;
         background-color: #ff831d;
     }
+}
+
+.page__map {
+   
+}
+.map {
+}
+.map__container {
+}
+.map__wrap {
+}
+.map__image {
+    aspect-ratio: 5/4;
+    object-fit: contain;
+}
+.ibg {
+   
 }

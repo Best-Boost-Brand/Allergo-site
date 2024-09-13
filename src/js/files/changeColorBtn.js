@@ -7,9 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Button found"); // Перевірка наявності кнопки
     button.addEventListener("click", function () {
       console.log("Button clicked"); // Перевірка натискання кнопки
-      this.style.backgroundColor = "red";
+      this.style.backgroundColor = "blue";
     });
   } else {
     console.error("Button with ID 'red' not found!");
   }
 });
+
+
+// логіка відображення карти на сторінці підтвердження замовлення 
+ 

@@ -199,7 +199,7 @@ document.addEventListener("click", function (event) {
     if (selectedDish) {
       console.log("Selected dish:", selectedDish); // Перевіряємо, чи правильно вибрана страва
 
-      // Отримуємо поточний стан localStorage
+      // Отримуємо  localStorage
       const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
 
       // Перевіряємо, чи страва вже існує у кошику
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Додаємо елемент для відображення загальної суми   ПОФІКСИТИ СТИЛІ ОСТАННЬОГО БЛОКУ!!!!!!!!!!!!!!!!!
+        // Додаємо елемент для відображення загальної суми   
         const totalPriceHTML = `
       <section class="page__amount amount">
           <div class="amount__container">
@@ -422,3 +422,78 @@ document.addEventListener("click", function (event) {
 });
 
 
+//==============
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hideMapButton = document.getElementById('curier');
+  const showMapButton = document.getElementById('selfPickUp');
+  const mapElement = document.querySelector('.page__map');
+
+  // ховається карта після натиску на кнопку
+  if (hideMapButton) {
+      hideMapButton.addEventListener('click', function() {
+          localStorage.setItem('hideMap', 'true');
+          localStorage.removeItem('visibleMap');
+          if (mapElement) {
+              mapElement.style.display = 'none';
+          }
+      });
+  }
+
+  //  показується карта після натиску на самовивіз
+  if (showMapButton) {
+      showMapButton.addEventListener('click', function() {
+          localStorage.setItem('visibleMap', 'true');
+          localStorage.removeItem('hideMap');
+          if (mapElement) {
+              mapElement.style.display = 'block';
+          }
+      });
+  }
+
+  // перевірка сховища 
+  const hideMap = localStorage.getItem('hideMap');
+  const visibleMap = localStorage.getItem('visibleMap');
+  if (hideMap === 'true' && mapElement) {
+      mapElement.style.display = 'none';
+  } else if (visibleMap === 'true' && mapElement) {
+      mapElement.style.display = 'block';
+  }
+});
+
+//==============================
+document.addEventListener('DOMContentLoaded', function() {
+  const deliverySelect = document.querySelector('.delivery__form');
+  const mapSection = document.querySelector('.page__map');
+
+  if (deliverySelect && mapSection) {
+    // Обробка зміни вибору
+    deliverySelect.addEventListener('change', function() {
+      const selectValue = deliverySelect.value;
+      if (selectValue === '1') {
+        mapSection.style.display = 'none';
+        localStorage.setItem('hideMap', 'true');
+        localStorage.removeItem('visibleMap');
+      } else if (selectValue === '2') {
+        mapSection.style.display = 'block';
+        localStorage.setItem('visibleMap', 'true');
+        localStorage.removeItem('hideMap');
+      }
+    });
+
+    // Ініціалізація видимості карти на основі localStorage
+    const hideMap = localStorage.getItem('hideMap');
+    const visibleMap = localStorage.getItem('visibleMap');
+    
+    if (hideMap === 'true') {
+      mapSection.style.display = 'none';
+    } else if (visibleMap === 'true') {
+      mapSection.style.display = 'block';
+    } else {
+      // Встановити значення за замовчуванням, якщо нічого не знайдено в localStorage
+      mapSection.style.display = (deliverySelect.value === '1') ? 'none' : 'block';
+    }
+  }
+});
+
+//=====
