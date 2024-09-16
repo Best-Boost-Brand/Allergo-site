@@ -497,3 +497,47 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //=====
+//==============================
+document.addEventListener('DOMContentLoaded', function() {
+  const deliverySelect = document.querySelector('.delivery__form');
+  const mapSection = document.querySelector('.page__map');
+  const curierAddressSection = document.querySelector('.curier__adress');
+
+  if (deliverySelect && mapSection && curierAddressSection) {
+    // Обробка зміни вибору
+    deliverySelect.addEventListener('change', function() {
+      const selectValue = deliverySelect.value;  // Отримуємо значення вибраного option
+      
+      if (selectValue === '1') {  // Якщо обрано "Доставка кур’єром"
+        mapSection.style.display = 'none';  // Приховуємо карту
+        curierAddressSection.style.display = 'block';  // Показуємо адресу
+        localStorage.setItem('hideMap', 'true');
+        localStorage.removeItem('hideCurierAddress');
+      } else if (selectValue === '2') {  // Якщо обрано "Самовивіз"
+        mapSection.style.display = 'block';  // Показуємо карту
+        curierAddressSection.style.display = 'none';  // Приховуємо адресу
+        localStorage.setItem('hideCurierAddress', 'true');
+        localStorage.removeItem('hideMap');
+      }
+    });
+
+    // Ініціалізація видимості елементів на основі localStorage
+    const hideMap = localStorage.getItem('hideMap');
+    const hideCurierAddress = localStorage.getItem('hideCurierAddress');
+    
+    if (hideMap === 'true') {
+      mapSection.style.display = 'none';
+      curierAddressSection.style.display = 'block';  // Показуємо адресу за замовчуванням
+    } else if (hideCurierAddress === 'true') {
+      mapSection.style.display = 'block';  // Показуємо карту за замовчуванням
+      curierAddressSection.style.display = 'none';
+    } else {
+      // Встановити значення за замовчуванням, якщо нічого не знайдено в localStorage
+      mapSection.style.display = (deliverySelect.value === '1') ? 'none' : 'block';
+      curierAddressSection.style.display = (deliverySelect.value === '2') ? 'none' : 'block';
+    }
+  }
+});
+
+
+//=====

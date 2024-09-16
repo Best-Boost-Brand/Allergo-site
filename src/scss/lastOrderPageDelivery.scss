@@ -50,6 +50,41 @@
     &__btn {
     }
 }
+.orders__container {
+}
+.orders__box {
+}
+.aproved-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 2em;
+}
+.aproved-items__item {
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dotted black;
+}
+.aproved-items__quntity {
+}
+.aproved-items__caption {
+}
+.aproved-items__total {
+}
+.aproved-items__summ {
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+.summ {
+}
+.summ__title {
+}
+
+
 .orders {
     &__container {
     }
@@ -57,7 +92,7 @@
     &__box {
         border: solid 1px #c4c4c4;
         border-radius: 15px;
-        height: 10vh;
+     
     }
 }
 .options {
@@ -142,6 +177,25 @@
             display: block;
         }
     }
+}
+.delivery__form {
+    width: 100%;
+    border: 2px solid #d2d2d2;
+    border-radius: 5px;
+    height: 2em;
+    padding-left: 2em;
+    padding-right: 1em;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+    
+}
+.delivery__curier {
+    width: 100vw;
+}
+.delivery__selfpickup {
 }
 
 .curier {

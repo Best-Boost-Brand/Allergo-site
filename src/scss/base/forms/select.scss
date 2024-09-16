@@ -3,8 +3,10 @@
 .select {
     min-width: 0;
     position: relative;
+    display: block;
     // .select__body
     &__body {
+        display: block;
         position: relative;
 	  margin-bottom: 1em;
     }
