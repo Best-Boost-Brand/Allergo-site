@@ -232,7 +232,60 @@ document.addEventListener("click", function (event) {
   }
 	
 });
+//++++++++
+document.addEventListener("DOMContentLoaded", function () {
+  // Отримуємо замовлення з localStorage
+  const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
 
+  // Змінна для підрахунку загальної суми
+  let totalAmount = 0;
+
+  // Отримуємо контейнер для відображення замовлень
+  const lastAproove = document.getElementById("lastAproove");
+
+  // Очищаємо контейнер перед додаванням нових елементів
+  lastAproove.innerHTML = '';
+
+  // Перевіряємо чи є замовлення
+  if (storedOrders.length > 0) {
+    // Проходимо по кожному замовленню і створюємо відповідний HTML блок
+    storedOrders.forEach(order => {
+      const { quantity, caption, price } = order;
+      const totalItemPrice = quantity * price;
+      totalAmount += totalItemPrice;
+      const orderHTML = `
+        <div class="aproved-items__item">
+          <div class="aproved-items__quntity">
+            <h4>${quantity}</h4>
+          </div>
+          <div class="aproved-items__caption">
+            <h3>${caption}</h3>
+          </div>
+          <div class="aproved-items__total">
+            <h4>${totalItemPrice} грн</h4>
+          </div>
+        </div>
+      `;
+
+      // Додаємо замовлення до контейнера
+      lastAproove.innerHTML += orderHTML;
+    });
+
+    // Додаємо загальну суму
+    const totalAmountHTML = `
+      <div class="aproved-items__summ summ">
+        <div class="summ__title">Загальна сума</div>
+        <h3>${totalAmount} грн</h3>
+      </div>
+    `;
+
+    lastAproove.innerHTML += totalAmountHTML;
+  } else {
+    // Якщо замовлень немає, показуємо повідомлення
+    lastAproove.innerHTML = `<p>Ваш кошик порожній</p>`;
+  }
+});
+//++++++++
 
 const element = document.querySelector(".nav__busket-btn");
 // Перевіряємо клас=======================================
@@ -278,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Відображаємо кількість та інші дані на сторінці
         const aprooveBox = document.getElementById("aproove__box");
-
+        const chekedBox=document.getElementById("lastAproove")
         // Змінна для підрахунку загальної суми
         let totalPrice = 0;
 
@@ -354,6 +407,27 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("Немає даних у localStorage");
     }
+    const aprovedItemDish=`
+                <div class="orders__box aproved-items">
+                <div class="aproved-items__item">
+                  <div class="aproved-items__quntity">
+                    <h4>${quantitiy}</h4>
+                  </div>
+                  <div class="aproved-items__caption">
+                    <h3>${dish.caption}</h3>
+                  </div>
+                  <div class="aproved-items__total">
+                    <h4>${dishTotalPrice}</h4>
+                  </div>
+                </div>
+                <div class="aproved-items__summ summ">
+                  <div class="summ__title">
+                    загальна сума 
+                  </div>
+                 ${dishTotalPrice}грн
+                </div>
+            </div>`
+            lastAproove.innerHTML += totalPriceHTML;
 });
 
 //============================================ натиск на кнопку ->додавання в корзину

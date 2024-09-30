@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <div class="page__container">
+            <div class="page__logotype logotype">
+                <div class="logotype__picture picture">
+                    <img class="picture__image ibg" src="img/logoAllegro.svg" alt="logo">
+                </div>
+                <div class="page__subtitle">
+                    <h4>Замовлення підтверджено ! </h4>
+                </div>
+                <div class="page__order-number">
+                    <p>Номер замовлення №83463</p>
+                </div>
+                <div class="page__order-conect">
+                    <p>З вами зв’яжуться, 
+                        коли замовлення буде готове </p>
+                </div>
+            </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

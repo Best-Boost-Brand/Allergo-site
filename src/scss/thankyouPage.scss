@@ -1,0 +1,57 @@
+.wrapper {
+}
+.page {
+}
+.page__container {
+}
+.page__logotype {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+}
+.logotype {
+ 
+}
+.logotype__picture {
+    margin-bottom: 1rem;
+}
+.picture {
+    width: 100%;
+}
+.picture__image {
+    
+    aspect-ratio: 4/1;
+    object-fit: contain;
+}
+.ibg {
+}
+.page__subtitle {
+    h4{
+    font-family: "Montserrat";
+font-size: 20px;
+font-weight: 800;
+line-height: 24.38px;
+text-align: center;
+margin-bottom: 0.5em;
+
+    }
+}
+.page__order-number {
+    font-family: "Montserrat";
+font-size: 23px;
+font-weight: 600;
+line-height: 28.04px;
+text-align: center;
+margin-bottom: 1em;
+
+}
+.page__order-conect {
+    font-family: "Montserrat";
+font-size: 15px;
+font-weight: 500;
+line-height: 18.29px;
+text-align: center;
+
+}

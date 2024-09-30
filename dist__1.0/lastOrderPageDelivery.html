@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240917083136">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="basket__page page">
+			<div class="section__top-page aproove">
+				<div class="aproove__container">
+					<div class="aproove__header">
+						<div class="aproove__back">
+							<a href="aprooveOrderPage.html"><img src="img/arrow.svg" alt="" /></a>
+						</div>
+						<div class="aproove__logo">
+							<a href="#"><img src="img/logoAllegro.svg" alt="" /></a>
+						</div>
+					</div>
+					<div class="aproove__wrap">
+						<div class="aproove__title">
+							<h2> Підтвердження замовлення </h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="page__orders orders">
+				<div class="orders__container">
+					<div id="lastAproove" class="orders__box aproved-items">
+						<div class="aproved-items__item">
+							<div class="aproved-items__quntity">
+								<h4>232</h4>
+							</div>
+							<div class="aproved-items__caption">
+								<h3>rjgeorunouernonv</h3>
+							</div>
+							<div class="aproved-items__total">
+								<h4>2323</h4>
+							</div>
+						</div>
+						<div class="aproved-items__summ summ">
+							<div class="summ__title">
+								загальна сума
+							</div>
+							2324 грн
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__delivery-options options">
+				<div class="options__container">
+					<div class="options__wrap">
+						<div class="options__curier curier">
+							<div class="curier__title">
+								<h4>спосіб доставки</h4>
+							</div>
+							<div class="curier__menu delivery">
+								<select id="deliverySelect" name="delivery" class="delivery__form">
+									<option class="delivery__curier" data-asset=img/motoNew.svg" value="1" selected><img src=img/moto.webp" alt="">Доставка кур’єром</option>
+									<option class="delivery__selfpickup" data-asset=img/koshyk.svg" value="2">Самовивіз</option>
+								</select>
+								<!--<div class="curier__select select">
+                    <div class="select__selected">
+                      <span class="select__text">Виберіть опцію</span>
+                      <img src="" alt="Selected" class="select__image" />
+                    </div>
+                    <div class="select__items select__items-hide">
+                      <div class="select__item" data-image="img/moto.webp"></div>
+                        доставка кур’єром</div
+                      >
+                      <div class="select__item" data-image="img/samovyviz.svg"
+                        >самовивіз</div
+                      >
+                    </div>
+                  </div>-->
+							</div>
+
+							<div class="curier__time">
+
+								<form>
+									<label for="time">Час для отримання замовлення</label>
+									<input type="time" id="timeInput" name="time" step="600" min="09:00" max="18:00" />
+								</form>
+
+							</div>
+							<div class="curier__adress adress">
+								<div class="adress__adres-delivery">
+									<h4> адреса доставки</h4>
+								</div>
+								<div class="adress__building building">
+									<h3>Корпус</h3>
+									<div class="building__input">
+										<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" />
+									</div>
+								</div>
+								<div class="adress__floor floor">
+									<h3>Поверх</h3>
+									<div class="floor__input">
+										<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" />
+									</div>
+								</div>
+								<div class="adress__office">
+									<h3>Офіс</h3>
+									<div class="adress__input">
+										<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" />
+									</div>
+								</div>
+							</div>
+							<div class="curier__textarea texarea">
+								<div class="textarea__title">
+									<h3>Коментар до замовлення</h3>
+								</div>
+								<textarea class="textarea__zone" id=""></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="map" class="page__map map">
+				<div class="map__container">
+					<div class="map__wrap">
+						<img class="map__image ibg" src="img/map.webp" alt="">
+					</div>
+				</div>
+			</section>
+			<section class="page__contacts contacts">
+				<div class="page__container">
+					<div class="contacts__wrap">
+						<div class="contacts__title">
+							<h3>контактні дані</h3>
+						</div>
+						<div class="contact__name name">
+							<div class="name__title">
+								<h4>Ім`я</h4>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder=" ваше імя" class="input" />
+							</div>
+						</div>
+						<div class="contact__number number">
+							<div class="number__title">
+								<h4>Ваш номер телефону</h4>
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ввудіть номер телефону" class="input" />
+							</div>
+						</div>
+					</div>
+					<div class="page__aproove aproove">
+
+						<button class="aproove__btn"> підтвердити</button>
+					</div>
+					<a href="thankyouPage.html">thsnkyoupage</a>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240917083136"></script>
+</body>
+
+</html>

@@ -71,4 +71,10 @@ import { menuInit } from "./functions.js";
 //+++=================
 
 
-
+document.addEventListener("click", function (event) {
+  // Перевіряємо, чи натиснуто на кнопку з класом 'page__bigbasket-btn'
+  if (event.target.closest(".aproove__btn")) {
+    // Виконуємо перехід на іншу сторінку
+    window.location.href = "thankyouPage.html"; // замініть URL на потрібний
+  }
+});
