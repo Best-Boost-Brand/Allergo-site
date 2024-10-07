@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  mysql:
+    container_name: kse_mysql
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_USER: 'Popka'
+      MYSQL_PASSWORD: 'Popka'
+    volumes:
+      - /Users/denysbzenko/Desktop/BBB/Allergodb/mysql/dat:/var/lib/mysql
+    ports:
+      - "3306:3306"
