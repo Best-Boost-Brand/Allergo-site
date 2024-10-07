@@ -36,33 +36,28 @@ app.get('/dishes', (req, res) => {
 // Додати вибрані страви до таблиці теперішніх страв
 app.post('/current_dishes', (req, res) => {
   const { selectedDishes } = req.body;
-  if (!Array.isArray(selectedDishes) || selectedDishes.length === 0) {
-    return res.status(400).send('Неправильний формат даних');
-  }
-
-  // Оновити вибрані страви у таблиці present_dishes
-  const values = selectedDishes.map(dishId => [dishId, 1, Date.now()]);
-  db.query('DELETE FROM present_dishes', (deleteErr) => {
-    if (deleteErr) {
-      console.error('Помилка видалення:', deleteErr);
-      res.status(500).send('Помилка видалення');
-      return;
+  
+  // Спочатку обнуляємо всі значення колонки `present`
+  const resetQuery = 'UPDATE dishes SET present = 0';
+  db.query(resetQuery, (resetErr) => {
+    if (resetErr) {
+      console.error('Помилка скидання значень:', resetErr);
+      return res.status(500).send('Помилка скидання значень');
     }
 
-    const insertQuery = `
-      INSERT INTO present_dishes (dish_id, name, caption, image_url, price, order_number, category_id, present, updated)
-      SELECT id, name, caption, image_url, price, order_number, category_id, 1, ?
-      FROM dishes WHERE id IN (?)
-    `;
-
-    db.query(insertQuery, [Date.now(), selectedDishes], (err, result) => {
-      if (err) {
-        console.error('Помилка вставки:', err);
-        res.status(500).send('Помилка сервера');
-        return;
-      }
-      res.sendStatus(200);
-    });
+    // Оновлюємо тільки вибрані страви, встановлюючи present = 1
+    if (selectedDishes.length > 0) {
+      const updateQuery = `UPDATE dishes SET present = 1 WHERE id IN (?)`;
+      db.query(updateQuery, [selectedDishes], (updateErr, result) => {
+        if (updateErr) {
+          console.error('Помилка оновлення значень:', updateErr);
+          return res.status(500).send('Помилка оновлення значень');
+        }
+        res.sendStatus(200);
+      });
+    } else {
+      res.sendStatus(200); // Якщо жодна страва не вибрана, просто повертаємо OK
+    }
   });
 });
 
