@@ -36,7 +36,7 @@ app.get('/dishes', (req, res) => {
 // Додати вибрані страви до таблиці теперішніх страв
 app.post('/current_dishes', (req, res) => {
   const { selectedDishes } = req.body;
-  
+
   // Спочатку обнуляємо всі значення колонки `present`
   const resetQuery = 'UPDATE dishes SET present = 0';
   db.query(resetQuery, (resetErr) => {
@@ -48,15 +48,44 @@ app.post('/current_dishes', (req, res) => {
     // Оновлюємо тільки вибрані страви, встановлюючи present = 1
     if (selectedDishes.length > 0) {
       const updateQuery = `UPDATE dishes SET present = 1 WHERE id IN (?)`;
-      db.query(updateQuery, [selectedDishes], (updateErr, result) => {
+      db.query(updateQuery, [selectedDishes], (updateErr) => {
         if (updateErr) {
           console.error('Помилка оновлення значень:', updateErr);
           return res.status(500).send('Помилка оновлення значень');
         }
-        res.sendStatus(200);
+
+        // Очищаємо таблицю present_dishes
+        const deleteQuery = `DELETE FROM present_dishes`;
+        db.query(deleteQuery, (deleteErr) => {
+          if (deleteErr) {
+            console.error('Помилка видалення з present_dishes:', deleteErr);
+            return res.status(500).send('Помилка видалення даних');
+          }
+
+          // Вставляємо нові дані з таблиці dishes, де present = 1
+          const insertPresentDishesQuery = `
+            INSERT INTO present_dishes (dish_id, name, caption, image_url, price, order_number, category_id, present, updated)
+            SELECT id, name, caption, image_url, price, order_number, category_id, present, UNIX_TIMESTAMP()
+            FROM dishes WHERE present = 1
+          `;
+          db.query(insertPresentDishesQuery, (err) => {
+            if (err) {
+              console.error('Помилка оновлення present_dishes:', err);
+              return res.status(500).send('Помилка оновлення таблиці present_dishes');
+            }
+            res.sendStatus(200);
+          });
+        });
       });
     } else {
-      res.sendStatus(200); // Якщо жодна страва не вибрана, просто повертаємо OK
+      // Якщо жодна страва не вибрана, очищуємо таблицю present_dishes
+      db.query('DELETE FROM present_dishes', (err) => {
+        if (err) {
+          console.error('Помилка очищення present_dishes:', err);
+          return res.status(500).send('Помилка очищення таблиці present_dishes');
+        }
+        res.sendStatus(200);
+      });
     }
   });
 });
