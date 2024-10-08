@@ -107,6 +107,42 @@ app.get('/current_dishes', (req, res) => {
   });
 });
 
+// Отримати дані про конкретну страву за ID
+app.get('/dishes/:id', (req, res) => {
+  const dishId = req.params.id;
+  db.query('SELECT * FROM dishes WHERE id = ?', [dishId], (err, result) => {
+    if (err) {
+      console.error('Помилка запиту:', err);
+      res.status(500).send('Помилка сервера');
+      return;
+    }
+    if (result.length === 0) {
+      res.status(404).send('Страву не знайдено');
+      return;
+    }
+    res.json(result[0]);
+  });
+});
+
+// Оновлення даних конкретної страви за ID
+app.put('/dishes/:id', (req, res) => {
+  const dishId = req.params.id;
+  const { name, caption, image_url, price, order_number, category_id } = req.body;
+
+  const updateQuery = `
+    UPDATE dishes SET name = ?, caption = ?, image_url = ?, price = ?, order_number = ?, category_id = ?
+    WHERE id = ?
+  `;
+  db.query(updateQuery, [name, caption, image_url, price, order_number, category_id, dishId], (err, result) => {
+    if (err) {
+      console.error('Помилка оновлення даних:', err);
+      res.status(500).send('Помилка сервера');
+      return;
+    }
+    res.sendStatus(200);
+  });
+});
+
 // Запустити сервер на порту 3005
 app.listen(3005, () => {
   console.log('Сервер запущено на порту 3005');
