@@ -463,9 +463,28 @@
 .map__container {
 }
 .map__wrap {
+    position: relative;
 }
+.map__fork{
+    position: absolute;
+    height: 6vh;
+    left: 67%;
+    animation-name: fork;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    @media (max-width:600px) {
+        height: 5vh;
+    }
+}
+ @keyframes fork{
+    0%{top: 20%;}
+  
+    50%{top: 25%;}
+  
+    100%{top: 20%;}
+ }
 .map__image {
-    aspect-ratio: 5/4;
+    aspect-ratio: 5/2.5;
     object-fit: contain;
 }
 .ibg {

@@ -397,6 +397,11 @@ export function formQuantity() {
 	});
 }
 */
+
+
+//------- тут було так до 07.10
+
+/*
 export function formQuantity() {
   // Спочатку видаляємо обробник подій, якщо він існує
   document.removeEventListener("click", handleQuantityClick);
@@ -649,6 +654,7 @@ export function formQuantity() {
 }
 
 */
+
 /*
 export function formRating() {
 	const ratings = document.querySelectorAll('.rating');

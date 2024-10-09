@@ -52,268 +52,135 @@
             line-height: 32.91px;
             text-align: center;
             @include adaptiveValue("font-size", 27, 18);
+            
         }
     }
 
-    &__options {
-        display: flex;
-        justify-content: space-between;
+}
+.order__item{
+    display: flex;
+    gap: 5px;
+  
+}
+.order__button-box{
+    display: flex;
+}
+.order__item {
+    border-bottom: solid #f3f1f1;
+}
+.order__quantity-total {
+    font-family: Montserrat;
+font-size: 20px;
+font-weight: 700;
+line-height: 24.38px;
+text-align: left;
+color:  #FF831D;
+
+
+}
+.order__describe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 12.19px;
+text-align: left;
+
+
+}
+.order__mass{
+    font-family: Montserrat;
+font-size: 12px;
+font-weight: 600;
+line-height: 14.63px;
+text-align: left;
+
+}
+.order__title {
+    font-family: Montserrat;
+font-size: 20px;
+font-weight: 700;
+line-height: 24.38px;
+text-align: left;
+margin-bottom: 0.5rem;
+
+}
+.order__caption{
+    margin-bottom: 1rem;
+}
+.order__price {
+    font-family: Montserrat;
+font-size: 25px;
+font-weight: 600;
+line-height: 30.48px;
+text-align: left;
+color:  #FF831D;
+}
+.order__button-box {
+    
+  
+}
+.order__navigate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav__busket-btn {
+    position: absolute;
+    top: 9%;
+    left: 15%;
+}
+.navigation{
+    display: flex;
+    width: 50px;
+    button{
+        width: 40px;
+        text-align: center;
         align-items: center;
-        gap: 15px;
-        padding-bottom: 10px;
-    }
-
-    &__type {
-        h3 {
-            font-family: Montserrat;
-            font-size: 15px;
-            font-weight: 900;
-            line-height: 18.29px;
-            text-align: left;
-            @include adaptiveValue("font-size", 15, 8);
-        }
-    }
-
-    &__buttons {
-        display: flex;
-        gap: 15px;
+        background-color: #D9D9D9;
+        border-radius: 5px; 
     }
 }
-.order {
-    &__button-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    &__delete-button {
-    }
+.order__minus {
+  
 }
-.item {
-    &__navigate {
-    }
+.order__input {
+    text-align: center;
 }
-.nav {
-    &__busket-btn {
-    }
+.order__plus {
 }
-.quantity {
-    &__button {
-        &_plus {
-        }
-
-        &_minus {
-        }
-    }
-
-    &__input {
-    }
+.order__delete-button {
 }
 .btn {
-    &__delete {
-        box-shadow: 3px 6px 6px 3px #00000040 inset;
-        background-color: #eae9e9;
-        border-radius: 10px;
-        width: 45px;
-        height: 45px;
-        transition: all 0.3s;
-        &:hover {
-            background-color: #ff831d;
-            transition: all 0.3s;
-        }
-        img {
-            width: 25px;
-            height: 25px;
-        }
-    }
 }
+.btn__delete {
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+    background-color: #D9D9D9;
+    border-radius: 8px;
 
-.aproove {
-    &__buttons {
-    }
-
-    &__button {
-        font-family: "Montserrat";
-        font-size: 15px;
-        font-weight: 900;
-        line-height: 18.29px;
-        text-align: left;
-        color: #ffffff;
-        background-color: #c4c4c4;
-        border-radius: 5px;
-        padding: 4px 8px;
-        @include adaptiveValue("font-size", 15, 8);
-
-        &:hover {
-            background-color: #ff831d;
-        }
-    }
 }
-
-.back-link {
+.btn__image{
+ width: 25px;
+ height: 25px;
+   
 }
-.button {
-    &__back-link {
-    }
-}
-
-.page {
-    &__amount {
-    }
-}
-.amount {
-    &__container {
-    }
-    &__total-summ {
-        h4 {
-            padding: 4px 8px;
-            font-size: 1.8em;
-            font-family: " Montserrat";
-            font-size: 25px;
-            font-weight: 600;
-            line-height: 30.48px;
-            text-align: left;
-        }
-    }
-
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4px 8px;
-    }
-
-    &__price-box {
-        font-family: " Montserrat";
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 19.5px;
-        text-align: left;
-    }
-
-    &__next {
-    }
-
-    &__btn {
-        max-width: 220px;
-        width: 100%;
-        border-radius: 15px;
-        font-family: "Montserrat";
-        font-size: 25px;
-        font-weight: 700;
-        line-height: 30.48px;
-        text-align: left;
-        padding: 5px 10px;
-        background-color: #ff831d;
-        @include adaptiveValue("font-size", 25, 14);
-    }
-}
-.page {
-    &__orders {
-    }
-}
-.orders {
-    &__container {
-    }
-
-    &__wrapp {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        border-bottom: solid 1px #c4c4c4;
-    }
-}
-.order {
-    &__item {
-        display: flex;
-        padding: 5px 10px;
-    }
-
-    &__quantity {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.3em 0em;
-
-        flex: 1 1 8%;
-        font-family: "Montserrat";
-        font-size: 2.6em;
-        font-weight: 700;
-        line-height: 24.38px;
-        text-align: left;
-        color: #ff831d;
-    }
-
-    &__describe {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 4px 8px;
-        flex: 1 1 62%;
-        h2 {
-            font-size: 2.6em;
-            font-family: Montserrat;
-            color: #ff831d;
-            font-weight: 600;
-            line-height: 30.48px;
-            text-align: left;
-        }
-        h3 {
-            font-size: 1.9em;
-        }
-        h4 {
-            font-size: 1.2em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-    }
-
-    &__img-quantity {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 30%;
-        align-items: center;
-        justify-content: center;
-    }
-}
-.item {
-    &__text {
-    }
-
-    &__navigate {
-    }
-}
-.text {
-    &__title {
-    }
-    h4 {
-    }
-}
-.nav {
-    &__price {
-    }
-
-    &__busket-btn {
-    }
+.order__img-quantity {
 }
 .box {
-    &__image {
-        aspect-ratio: 5/4;
-        object-fit: cover;
-        border-radius: 5px;
-    }
 }
-.quantity {
-    &__button {
-        &_plus {
-        }
-
-        &_minus {
-        }
-    }
-
-    &__input {
-    }
+.box__img {
+}
+.box__image {
+}
+.ibg {
+}
+.pict__image {
+    aspect-ratio: 4/3;
+    object-fit: cover;
 }

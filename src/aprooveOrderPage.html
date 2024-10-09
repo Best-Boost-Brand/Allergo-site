@@ -20,48 +20,45 @@
               <div class="aproove__title">
                 <h2> Перевірка замовлення </h2>
               </div>
-              <!--<div class="aproove__options">
-                <div class="aproove__type">
+              <div class="aproove__options">
+                <!--<div class="aproove__type">
                   <h3>Тип замовлення :</h3>
                 </div>
                 <div class="aproove__buttons">
                   <button id="curier" class="aproove__button">доставка кур'єром</button>
                   <button id="selfPickUp" class="aproove__button">самовивіз</button>
-                </div>
-              </div>-->
+                </div>-->
+              </div>
             </div>
           </div>
         </div>
         <section class="page__orders orders">
           <div class="orders__container">
-            <div id="aproove__box" class="orders__wrapp order">
-              <!-- Закоментований блок -->
-              <!--<div class="order__item">
-                <div class="order__quantity">
+            <div id="dishes-container" class="orders__wrapp">
+            <div class="dishes__item">
+             <div class="order__item">
+                <div class="order__quantity-total">
                   <h4>3x</h4>
                 </div>
                 <div class="order__describe">
-                  <h3 class="text__title"> Борщ <br />по-українськи</h3>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                  <h4>280 гр</h4>
-                  <div class="nav__price">249 грн</div>
+                  <h3 class="order__title"> Борщ <br />по-українськи</h3>
+                  <p class="order__caption">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  <h4 class="order__mass">280 грн за порцію</h4>
+                  <div class="order__price">249 грн</div>
                 </div>
                 <div class="order__button-box">
-                  <div class="item__navigate nav">
+                  <div class="order__navigate ">
                     <button data-target="1" class="nav__busket-btn">
                       <img src="@img/basketSvg.svg" alt=""/>
                     </button>
-                    <div class="quantity" data-quantity data-target="1">
-                      <button type="button" class="quantity__button quantity__button_plus" data-quantity-plus></button>
+                    <div class="order__quantity navigation">
+                      <button class="order__minus" id="minus"> - </button>
+                      <input class="order__input" type="text" value="1" min="0">
+                      <button class="order__plus" id="plus"> + </button>
                     </div>
-                    <div class="quantity__input">
-                      <input autocomplete="off" readonly data-quantity-min="0" type="text" name="form[]" value="1" data-quantity-value/>
-                    </div>
-                    <button type="button" class="quantity__button quantity__button_minus" data-quantity-minus></button>
-                  </div>
                   <div class="order__delete-button btn">
                     <button class="btn__delete">
-                      <img src="@img/deleteBasket.svg" alt="">
+                      <img  class="btn__image ibg" src="@img/deleteBasket.svg" alt="">
                     </button>
                   </div>
                 </div>
@@ -70,7 +67,7 @@
                     <div class="box__image ibg"><img class="pict__image ibg" src="@img/dish.png" alt="1"></div>
                   </div>
                 </div>
-              </div> -->
+              </div> 
             </div>
           </div>
         </section>

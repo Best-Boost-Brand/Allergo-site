@@ -120,7 +120,7 @@ flsForms.formFieldsInit({
 // flsForms.formSubmit();
 
 /* Модуль форми "кількість" */
-flsForms.formQuantity();
+//flsForms.formQuantity();
 
 /* Модуль зіркового рейтингу */
 // flsForms.formRating();
@@ -254,8 +254,9 @@ import "./files/script.js";
 //import "./files/parseData.js";
 //import "./files/basketDishes.js";
 
-import "./files/secondLayerParseDate.js"
-import "./files/basketVisible.js";
-import "./files/changeColorBtn.js";
+//import "./files/secondLayerParseDate.js"
+//import "./files/basketVisible.js";
+//import "./files/changeColorBtn.js";
 import "./files/hideMap.js";
+import "./aprovePage.js"
 //============================================================================================================================================================================================================================================
