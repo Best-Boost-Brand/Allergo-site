@@ -133,7 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
     category.dishes.forEach(dish => {
       const dishItem = document.createElement('div');
       dishItem.classList.add('dishes__item', 'item');
-      dishItem.innerHTML = `${dish.id}
+      dishItem.id = `${dish.id}`;
+      dishItem.innerHTML = `
         <div class="item__picture" >
           <img class="item__image ibg" src="${dish.imageUrl}" alt="${dish.caption}">
         </div>
@@ -223,69 +224,84 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /// додаємо lockal storage
-
+  localStorage.removeItem('selectedDishes');
   dishContainer.addEventListener('click', function (event) {
     const target = event.target;
+    
     if (target.closest('.basket__btn')) {
-        const parentCard = target.closest('.item');
-        
-        // Отримання даних про товар
-        const dishData = {
-            id: parentCard.id, // передбачаємо, що id товару зберігається в data-атрибуті
-            caption: parentCard.querySelector('.text__title').innerText,
-            price: parentCard.querySelector('.price__amount').innerText,
-            quantity: parentCard.querySelector('.navigate__input').value,
-            // додайте інші необхідні дані
-        };
+      const parentCard = target.closest('.item');
+      let dishData = {
+        id: parentCard.id,
+        caption: parentCard.querySelector('.text__title').innerText,
+        price: parseFloat(parentCard.querySelector('.price__amount h4').innerText),
+        quantity: parseInt(parentCard.querySelector('.navigate__input').value),
+        description: parentCard.querySelector('.text__describe').innerText,
+        imageUrl: parentCard.querySelector('.item__image').src,
+      };
   
-        // Зберегти дані про товар у localStorage
-        localStorage.setItem('selectedDish', JSON.stringify(dishData));
-        
-     
-    }
-    if(target.closest('.navigate__plus')){
-      const parentCard=target.closest('.item')
-      const quantityInput=parentCard.querySelector('.navigate__input')
-      let quantity= parseInt(quantityInput.value)
-      quantity++
-      quantityInput.value=quantity
-      const dishData = JSON.parse(localStorage.getItem('selectedDish')) || {};
-        dishData.quantity = quantity; // Оновлюємо кількість
-        localStorage.setItem('selectedDish', JSON.stringify(dishData));
-    }
-    if (target.closest('.navigate__minus')){
-      const parentCard=target.closest('.item')
-      const quantityInput=parentCard.querySelector('.navigate__input')
-      let quantity=parseInt(quantityInput.value)
-      quantity--
-      quantityInput.value=quantity
-      const dishData=JSON.parse(localStorage.getItem('selectedDish'))||{}
-      dishData.quantity=quantity
-      localStorage.setItem('selectedDish',JSON.stringify(dishData) )
-        // =========
+      // Отримуємо поточні дані з локального сховища та перетворюємо в масив, якщо необхідно
+      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
   
-      const btnMinus=parentCard.querySelector('.navigate__minus')
-      let curentDishValue = parseInt(quantityInput.value);
-      // страшний костиль))))
-      if(btnMinus){
-        btnMinus.style.background='orange'
-        setTimeout(()=>{
-            btnMinus.style.background=''
-        },100)
+      // Перевірка, чи є дані масивом. Якщо ні, створюємо новий масив.
+      if (!Array.isArray(selectedDishes)) {
+        selectedDishes = [];
       }
-      if (curentDishValue < 0) {
-        curentDishValue = 0;
+  
+      // Додаємо нову страву до масиву
+      selectedDishes.push(dishData);
+  
+      // Зберігаємо оновлений масив у локальному сховищі
+      localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+  
+      console.log(localStorage.getItem('selectedDishes'));
+    }
+  
+    if (target.closest('.navigate__plus')) {
+      const parentCard = target.closest('.item');
+      const quantityInput = parentCard.querySelector('.navigate__input');
+      let quantity = parseInt(quantityInput.value);
+      quantity++;
+      quantityInput.value = quantity;
+  
+      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
+      if (Array.isArray(selectedDishes)) {
+        const dishIndex = selectedDishes.findIndex(dish => dish.id === parentCard.id);
+        if (dishIndex !== -1) {
+          selectedDishes[dishIndex].quantity = quantity;
+          localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+        }
       }
-      if (curentDishValue === 0) {
+    }
+  
+    if (target.closest('.navigate__minus')) {
+      const parentCard = target.closest('.item');
+      const quantityInput = parentCard.querySelector('.navigate__input');
+      let quantity = parseInt(quantityInput.value);
+      quantity--;
+      if (quantity < 0) quantity = 0;
+      quantityInput.value = quantity;
+  
+      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
+      if (Array.isArray(selectedDishes)) {
+        const dishIndex = selectedDishes.findIndex(dish => dish.id === parentCard.id);
+        if (dishIndex !== -1) {
+          selectedDishes[dishIndex].quantity = quantity;
+          localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+        }
+      }
+  
+      if (quantity === 0) {
         const basketBtn = parentCard.querySelector('.basket__btn');
         const quantityBlock = parentCard.querySelector('.navigate__quantity');
-
         basketBtn.style.display = "block";
         quantityBlock.style.display = "none";
       }
     }
-    console.log(localStorage)
+  
+    console.log(localStorage);
   });
+  
+  
 });
 
 

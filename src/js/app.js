@@ -258,5 +258,5 @@ import "./files/script.js";
 //import "./files/basketVisible.js";
 //import "./files/changeColorBtn.js";
 import "./files/hideMap.js";
-import "./aprovePage.js"
+import "./files/aprovePage.js";
 //============================================================================================================================================================================================================================================
