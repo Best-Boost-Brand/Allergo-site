@@ -133,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
     category.dishes.forEach(dish => {
       const dishItem = document.createElement('div');
       dishItem.classList.add('dishes__item', 'item');
+      dishItem.setAttribute('data-id', dish.id); // Додаємо атрибут data-id
+
       dishItem.id = `${dish.id}`;
       dishItem.innerHTML = `
         <div class="item__picture" >
@@ -237,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
         quantity: parseInt(parentCard.querySelector('.navigate__input').value),
         description: parentCard.querySelector('.text__describe').innerText,
         imageUrl: parentCard.querySelector('.item__image').src,
+        dishPrice: parseFloat(parentCard.querySelector('.price__amount h4').innerText)*parseInt(parentCard.querySelector('.navigate__input').value),
       };
   
       // Отримуємо поточні дані з локального сховища та перетворюємо в масив, якщо необхідно
