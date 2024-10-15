@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /// додаємо lockal storage
-  localStorage.removeItem('selectedDishes');
+  localStorage.removeItem("selectedDishes");
   dishContainer.addEventListener('click', function (event) {
     const target = event.target;
     
@@ -239,11 +239,11 @@ document.addEventListener("DOMContentLoaded", function () {
         quantity: parseInt(parentCard.querySelector('.navigate__input').value),
         description: parentCard.querySelector('.text__describe').innerText,
         imageUrl: parentCard.querySelector('.item__image').src,
-        dishPrice: parseFloat(parentCard.querySelector('.price__amount h4').innerText)*parseInt(parentCard.querySelector('.navigate__input').value),
+        //dishPrice: parseFloat(parentCard.querySelector('.price__amount h4').innerText)*parseInt(parentCard.querySelector('.navigate__input').value),
       };
   
       // Отримуємо поточні дані з локального сховища та перетворюємо в масив, якщо необхідно
-      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
+      let selectedDishes = JSON.parse(localStorage.getItem("selectedDishes"));
   
       // Перевірка, чи є дані масивом. Якщо ні, створюємо новий масив.
       if (!Array.isArray(selectedDishes)) {
@@ -254,9 +254,9 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedDishes.push(dishData);
   
       // Зберігаємо оновлений масив у локальному сховищі
-      localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+      localStorage.setItem("selectedDishes", JSON.stringify(selectedDishes));
   
-      console.log(localStorage.getItem('selectedDishes'));
+      console.log(localStorage.getItem("selectedDishes"));
     }
   
     if (target.closest('.navigate__plus')) {
@@ -266,12 +266,12 @@ document.addEventListener("DOMContentLoaded", function () {
       quantity++;
       quantityInput.value = quantity;
   
-      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
+      let selectedDishes = JSON.parse(localStorage.getItem("selectedDishes"));
       if (Array.isArray(selectedDishes)) {
         const dishIndex = selectedDishes.findIndex(dish => dish.id === parentCard.id);
         if (dishIndex !== -1) {
           selectedDishes[dishIndex].quantity = quantity;
-          localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+          localStorage.setItem("selectedDishes", JSON.stringify(selectedDishes));
         }
       }
     }
@@ -284,12 +284,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (quantity < 0) quantity = 0;
       quantityInput.value = quantity;
   
-      let selectedDishes = JSON.parse(localStorage.getItem('selectedDishes'));
+      let selectedDishes = JSON.parse(localStorage.getItem("selectedDishes"));
       if (Array.isArray(selectedDishes)) {
         const dishIndex = selectedDishes.findIndex(dish => dish.id === parentCard.id);
         if (dishIndex !== -1) {
           selectedDishes[dishIndex].quantity = quantity;
-          localStorage.setItem('selectedDishes', JSON.stringify(selectedDishes));
+          localStorage.setItem("selectedDishes", JSON.stringify(selectedDishes));
         }
       }
   

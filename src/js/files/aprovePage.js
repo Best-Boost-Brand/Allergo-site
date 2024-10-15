@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const storedDishData = JSON.parse(localStorage.getItem('selectedDishes')) || [];
+ let storedDishData = JSON.parse(localStorage.getItem('selectedDishes')) || [];
 
   if (storedDishData.length > 0) {
     console.log('Отримані дані з localStorage:', storedDishData);
@@ -65,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const checkedOrderInput = parseInt(orderInput.value);
       orderInput.value = checkedOrderInput + 1;
       itemQuantity.innerText = orderInput.value + ` X`;
-      updateLocalStorage(itemMenu.querySelector('.order__title').innerText, orderInput.value);
+      updateLocalStorage(itemMenu.querySelector('.order__title').innerText, 1);
     } else if (btnTarget.classList.contains('order__minus')) {
       const orderInput = btnTarget.closest('.order__quantity').querySelector('.order__input');
       const checkedOrderInput = parseInt(orderInput.value);
       if (checkedOrderInput > 1) {
         orderInput.value = checkedOrderInput - 1;
         itemQuantity.innerText = orderInput.value + ` X`;
-        updateLocalStorage(itemMenu.querySelector('.order__title').innerText, orderInput.value);
+        updateLocalStorage(itemMenu.querySelector('.order__title').innerText, -1);
       } else {
         itemQuantity.innerText = 1 + ` X`;
       }
@@ -123,16 +123,25 @@ document.addEventListener("DOMContentLoaded", function () {
     finishOrderPrice.innerText = summuryMenuprices.toFixed(2) + ` грн`;
   }
 
-  function updateLocalStorage(caption, newQuantity) {
-    const updatedData = storedDishData.map(dish => {
-      if (dish.caption === caption) {
-        return { ...dish, quantity: parseInt(newQuantity)
- };
+  function updateLocalStorage(caption, step) {
+   
+    let storedDishData = JSON.parse(localStorage.getItem('selectedDishes')) || []; // витягаємо обєкт для оновлення його дати
+    
+    let updatedData = storedDishData.map(dish => {
+      
+      console.log(JSON.stringify(dish))
+       if (dish.caption === caption) {
+        return { ...dish, quantity: parseInt(dish.quantity+step)};
+      }else{
+        return {...dish,quantity:dish.quantity};
       }
-      return dish;
+      
     });
-    localStorage.setItem('selectedDishes', JSON.stringify(updatedData))
-    console.log(updatedData);
+   
+    localStorage.setItem('selectedDishes', JSON.stringify(updatedData));
+    storedDishData=updatedData; // оновлене значення в локал сторедж
+    console.log('ce nova data',updatedData);
+  
   }
 
   summTotalorderAmount();

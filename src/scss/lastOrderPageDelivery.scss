@@ -63,15 +63,27 @@
 .aproved-items__item {
     display: flex;
     gap: 0.5em;
-    justify-content: space-between;
+   justify-content: space-between;
     align-items: center;
     border-bottom: 2px dotted black;
 }
 .aproved-items__quntity {
 }
 .aproved-items__caption {
+    font-family: Montserrat;
+font-size: 15px;
+font-weight: 700;
+line-height: 18.29px;
+text-align: left;
+
 }
 .aproved-items__total {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.29px;
+    text-align: right;
+    color: #ff831d;
 }
 .aproved-items__summ {
     display: flex;
@@ -84,14 +96,39 @@
 .summ__title {
 }
 
+.orders__store{
+    border: solid 1px #c4c4c4;
+    border-radius: 15px;
+}
+.ordered-items__summ{
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+.summ__title{
+    color:  #767676;
+    font-family: Montserrat;
+    font-size: 1.5em;
+    font-weight: 900;
+    line-height: 18.29px;
+    text-align: left;
+}
+.summ__total{
+    font-family: 'Montserrat';
+font-size: 1.8em;
+font-weight: 700;
+line-height: 32px;
+text-align: left;
 
+}
 .orders {
     &__container {
     }
 
     &__box {
-        border: solid 1px #c4c4c4;
-        border-radius: 15px;
+        
      
     }
 }
@@ -489,4 +526,35 @@
 }
 .ibg {
    
+}
+
+.aproved-items__item {
+}
+.aproved-items__quntity {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.29px;
+    text-align: left;
+    color: #ff831d;
+}
+.aproved-items__caption {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.29px;
+    text-align: left;
+}
+.aproved-items__total {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.29px;
+    text-align: left;
+}
+.aproved-items__summ {
+}
+.summ {
+}
+.summ__title {
 }
