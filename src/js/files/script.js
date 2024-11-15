@@ -6,11 +6,660 @@ import { flsModules } from "./modules.js";
 
 const dishesData = [
   {
+    id: 24,
+    name: null,
+    caption: "М'ясні страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "first_dishes",
+    caption: "Перші страви",
+    imageUrl:
+   "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
+    order: 10,
+    dishes: [
+      {
+        id: 1,
+        name: "borsch",
+        caption: "Борщ червоний",
+        description: "На свинячих реберцях\n Калорійність - на всі гроші",
+        imageUrl:
+          "https://gurman.com.ua/wp-content/uploads/2023/03/IMG_7073.webp",
+        price: 70.0,
+        order: 10,
+      },
+      {
+        id: 2,
+        name: "green_borsch",
+        caption: "Борщ зелений",
+        description: "Дуже смачний\n Калорійність - так собі",
+        imageUrl:
+          "https://klopotenko.com/wp-content/uploads/2022/04/zelenyy-borshch-zi-shpynatom-img-1000x600.jpg",
+        price: 64.99,
+        order: 20,
+      },
+      {
+        id: 3,
+        name: "fish_soup",
+        caption: "Рибна юшка",
+        description: "На форелі\n Калорійність - лайт",
+        imageUrl: "https://images.unian.net/photos/2021_04/1617620232-2719.jpg",
+        price: 80.5,
+        order: 30,
+      },
+      {
+        id: 4,
+        name: "mushroom_soup",
+        caption: "Грибна юшка",
+        description: "З білих карпатських грибів Калорійність - ",
+        imageUrl:
+          "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 5,
+        name: "borsch",
+        caption: "Борщ",
+        description: "100 видів м'яса\n Калорійність - смерть на місці",
+        imageUrl:
+          "https://bazylik.com.ua/wp-content/uploads/2024/01/image11_retsept-solianka-zbirna-miasna.webp",
+        price: 100.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 12,
+    name: null,
+    caption: "рибові страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 25,
+    name: null,
+    caption: "пташині страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 17,
+    name: null,
+    caption: "десерторві страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 22,
+    name: null,
+    caption: "несмачні страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 122,
+    name: "first_dishes",
+    caption: "треті страви",
+    imageUrl:
+   "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
+    order: 10,
+    dishes: [
+      {
+        id: 1,
+        name: "borsch",
+        caption: "Борщ червоний",
+        description: "На свинячих реберцях\n Калорійність - на всі гроші",
+        imageUrl:
+          "https://gurman.com.ua/wp-content/uploads/2023/03/IMG_7073.webp",
+        price: 70.0,
+        order: 10,
+      },
+      {
+        id: 2,
+        name: "green_borsch",
+        caption: "Борщ зелений",
+        description: "Дуже смачний\n Калорійність - так собі",
+        imageUrl:
+          "https://klopotenko.com/wp-content/uploads/2022/04/zelenyy-borshch-zi-shpynatom-img-1000x600.jpg",
+        price: 64.99,
+        order: 20,
+      },
+      {
+        id: 3,
+        name: "fish_soup",
+        caption: "Рибна юшка",
+        description: "На форелі\n Калорійність - лайт",
+        imageUrl: "https://images.unian.net/photos/2021_04/1617620232-2719.jpg",
+        price: 80.5,
+        order: 30,
+      },
+      {
+        id: 4,
+        name: "mushroom_soup",
+        caption: "Грибна юшка",
+        description: "З білих карпатських грибів Калорійність - ",
+        imageUrl:
+          "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 5,
+        name: "borsch",
+        caption: "Борщ",
+        description: "100 видів м'яса\n Калорійність - смерть на місці",
+        imageUrl:
+          "https://bazylik.com.ua/wp-content/uploads/2024/01/image11_retsept-solianka-zbirna-miasna.webp",
+        price: 100.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 9,
+    name: null,
+    caption: "восьмі страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: null,
+    caption: "десяті страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 12,
+    name: null,
+    caption: "дитячі страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+    {
+    id: 0,
+    name: null,
+    caption: "М'ясні страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
     id: 1,
     name: "first_dishes",
     caption: "Перші страви",
     imageUrl:
-      "https://andriynykytiuk.github.io/allegroSite/allegro__3.3/secondLayout.html",
+   "https://tuca.com.ua/wp-content/uploads/2020/03/recept_7678_p0nh.jpg",
     order: 10,
     dishes: [
       {
@@ -123,59 +772,179 @@ const dishesData = [
       },
     ],
   },
+  {
+    id: 5,
+    name: null,
+    caption: "М'ясні страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: null,
+    caption: "М'ясні страви",
+    imageUrl:
+      "https://vikna.tv/wp-content/uploads/2023/01/04/kachka-1800x1200.jpeg",
+    order: 20,
+    dishes: [
+      {
+        id: 6,
+        name: "kyiv_style_meat_ball",
+        caption: "Котлета по-київськи",
+        description: "Курятина, масло вершкове, кляр",
+        imageUrl:
+          "https://bigkyiv.com.ua/wp-content/uploads/2022/01/kotlety-po-kievski-800x600.jpg",
+        price: 110.0,
+        order: 10,
+      },
+      {
+        id: 7,
+        name: "home_style_meat_boal",
+        caption: "Котлета по-домашньому",
+        description: "Смакує з пюрехою",
+        imageUrl:
+          "https://img.fozzyshop.com.ua/157472-thickbox_default/kotlety-domashnie.jpg",
+        price: 65.99,
+        order: 20,
+      },
+      {
+        id: 8,
+        name: "pork_ribs",
+        caption: "Свинячі реберця",
+        description: "З журавлиновим соусом",
+        imageUrl: "https://images.unian.net/photos/2020_07/1593714242-3350.jpg",
+        price: 200.0,
+        order: 30,
+      },
+      {
+        id: 9,
+        name: "chicken_chop",
+        caption: "Куряча відбивна",
+        description: "Куряча відбивна в клярі\n Топ за свої гроші",
+        imageUrl:
+          "https://kuldim.com/wa-data/public/shop/products/89/21/2189/images/54555/54555.970.jpg",
+        price: 70.0,
+        order: 40,
+      },
+      {
+        id: 10,
+        name: "beef_steak",
+        caption: "Борщ",
+        description: "З мармурової яловичини, відчуй себе мажором",
+        imageUrl:
+          "https://shashlyk-master.com.ua/wp-content/uploads/2018/02/stejk-govyazhij.png",
+        price: 700.0,
+        order: 50,
+      },
+    ],
+  },
 ];
 
+localStorage.setItem('category',JSON.stringify(dishesData))
+
 document.addEventListener("DOMContentLoaded", function () {
-  const dishContainer = document.querySelector('.page__dishes', 'dishes');
 
-  // Динамічно створюємо картки
-  dishesData.forEach(category => {
-    category.dishes.forEach(dish => {
-      const dishItem = document.createElement('div');
-      dishItem.classList.add('dishes__item', 'item');
-      dishItem.setAttribute('data-id', dish.id); // Додаємо атрибут data-id
+// не має коду аби витягувати з локал сторедж  
+const newMenu=localStorage.getItem('category')
 
-      dishItem.id = `${dish.id}`;
-      dishItem.innerHTML = `
-        <div class="item__picture" >
-          <img class="item__image ibg" src="${dish.imageUrl}" alt="${dish.caption}">
-        </div>
-        <div class="item__text text" >
-          <div class="text__title">
-            <h2>${dish.caption}</h2>
-          </div>
-          <div class="text__describe">
-            <p>${dish.description}</p>
-          </div>
-        </div>
-        <div class="item__navigate navigate">
-          <div class="navigate__price price">
-            <div class="price__mass">
-              <h3>280 г</h3>
-            </div>
-            <div class="price__amount">
-              <h4>${dish.price} грн</h4>
-            </div>
-          </div>
-          <div class="navigate__quantity" style="display: none;">
-            <button class="navigate__minus" id="minus"> - </button>
-            <input class="navigate__input" type="text" value="1" min="0">
-            <button class="navigate__plus" id="plus"> + </button>
-          </div>
-          <div class="navigate__basket basket">
-            <button class="basket__btn"><img src="img/basketSvg.svg" alt="basket"></button>
-          </div>
-        </div>
-      `;
-      dishContainer.appendChild(dishItem);
+const slideContainer = document.querySelector('.wrapper__wrapper');
+if(slideContainer){
+    dishesData.forEach(category => {
+        const categoryItem = document.createElement("div");
+        if(categoryItem){
+        categoryItem.classList.add("wrapper__slide", "swiper-slide");
+        categoryItem.setAttribute("data-id", category.id);
+        categoryItem.innerHTML = `
+            <a href="secondLayout.html"><img src="${category.imageUrl}" alt="" /></a>
+            <h4>${category.caption}</h4>
+        `;
+        slideContainer.appendChild(categoryItem);
+        console.log(`атрибут першого леєра== ${categoryItem.getAttribute('data-id')}`);
+       // console.log(categoryItem);
+        }
     });
-  });
+  
+    // Додаємо делегування подій на slideContainer
+    slideContainer.addEventListener('click', function(event) {
+        const clickedCategory = event.target.closest('.wrapper__slide'); 
 
+        if (clickedCategory) {
+            const clickedId = clickedCategory.getAttribute('data-id');
+            localStorage.setItem('chosedID', clickedId)
+            console.log(`Selected category ID: ${clickedId}`);
+        } else {
+            console.log('Категорію не знайдено');
+        }
+    });
+
+
+
+      let chosedDataID=localStorage.getItem('chosedID')
+      console.log(chosedDataID)
+  // Динамічно створюємо картки
+
+
+  
+
+ 
   // Делегування подій для + -
-  dishContainer.addEventListener('click', function (event) {
+ /* dishContainer.addEventListener('click', function (event) {
     const target = event.target;
+    const parentCard = target.closest('.item');
     if (target.closest('.basket__btn')) {
-      const parentCard = target.closest('.item');
+     
       const quantityBlock = parentCard.querySelector('.navigate__quantity');
       const basketBtn = parentCard.querySelector('.basket__btn');
       quantityBlock.style.display = "flex";
@@ -215,8 +984,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const parentCard = target.closest('.item');
       const valueDish = parentCard.querySelector('.navigate__input');
       const btnPlus=parentCard.querySelector('.navigate__plus')
-    
+     
       if(btnPlus){
+        
         btnPlus.style.background='orange'
         setTimeout(()=>{
             btnPlus.style.background=''
@@ -224,10 +994,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
+*/
   /// додаємо lockal storage
   localStorage.removeItem("selectedDishes");
-  dishContainer.addEventListener('click', function (event) {
+  /*dishContainer.addEventListener('click', function (event) {
     const target = event.target;
     
     if (target.closest('.basket__btn')) {
@@ -303,8 +1073,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
     console.log(localStorage);
   });
-  
-  
+  */
+}
 });
 
 

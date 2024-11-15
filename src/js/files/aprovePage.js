@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
  let storedDishData = JSON.parse(localStorage.getItem('selectedDishes')) || [];
 
   if (storedDishData.length > 0) {
-    console.log('Отримані дані з localStorage:', storedDishData);
-    const dishContainer = document.querySelector('#dishes-container');
+    console.log(' дані з localStorage:', storedDishData);
+    const dishContainer = document.querySelector('.orders__wrapp');
 
     if (dishContainer) {
       storedDishData.forEach(dish => {
@@ -47,19 +47,20 @@ document.addEventListener("DOMContentLoaded", function () {
         dishContainer.appendChild(dishItem);
       });
     } else {
-      console.log('Контейнер з ідентифікатором #dishes-container не знайдено');
+      console.log(' #dishes-container не знайдено');
     }
   } else {
-    console.log('Немає даних у localStorage або дані мають неправильний формат');
+    console.log('Немає даних у localStorage або ');
   }
 
   // Робота кнопок на сторінці перевірки замовлень
   const btnDelegate = document.querySelector('.orders__container');
+  if (btnDelegate){
   btnDelegate.addEventListener('click', function (event) {
     const btnTarget = event.target;
     const itemMenu = btnTarget.closest('.dishes__item');
     const itemQuantity = itemMenu.querySelector('.quantity-total__title');
-
+    if (itemQuantity){
     if (btnTarget.classList.contains('order__plus')) {
       const orderInput = btnTarget.closest('.order__quantity').querySelector('.order__input');
       const checkedOrderInput = parseInt(orderInput.value);
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(storedDishData);
       }
     }
-
+  }
     // Рахуємо ціну за одну позицію в замовленні кількість Х ціну
     const pricePerDish = parseFloat(itemMenu.querySelector('.order__mass').innerText);
     let dishAmount = parseInt(itemQuantity.innerText);
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Рахуємо загальну ціну замовлення
     summTotalorderAmount();
   });
-
+  }
   const nextButton = document.querySelector('.dishes__next-page');
   if (nextButton) {
     nextButton.onclick = function () {
@@ -115,12 +116,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function summTotalorderAmount() {
     const totalPrices = document.querySelectorAll('.order__price');
     const finishOrderPrice = document.querySelector('.dishes__total-price');
+    if (finishOrderPrice){
     let summuryMenuprices = 0;
     totalPrices.forEach(element => {
       const price = parseFloat(element.innerText);
       summuryMenuprices += price;
     });
     finishOrderPrice.innerText = summuryMenuprices.toFixed(2) + ` грн`;
+  }
   }
 
   function updateLocalStorage(caption, step) {
@@ -145,4 +148,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   summTotalorderAmount();
+  const homePageBtn=document.querySelector('.aprove__link')
+  if(homePageBtn){
+  homePageBtn.addEventListener('click',function(event){
+    const trgClick=event.target
+    if(trgClick){
+      window.location.href='home.html'
+    }
+  })
+ }
 });

@@ -13,7 +13,7 @@
                 /></a>
               </div>
               <div class="aproove__logo">
-                <a href="#"><img src="@img/logoAllegro.svg" alt="" /></a>
+                <a class="aprove__link" href="#"><img src="@img/logoAllegro.svg" alt="" /></a>
               </div>
             </div>
             <div class="aproove__wrap">
@@ -27,8 +27,7 @@
           <div class="orders__container">
             <div class="orders__store">
               <div id="lastAproove" class="orders__box aproved-items">
-                <div class="orders__wrapp">
-                </div>
+             
               </div>
               <div class="ordered-items__summ summ">
                 <div class="summ__title">
@@ -48,7 +47,7 @@
                 </div>
                 <div class="curier__menu delivery">
 			<select id="deliverySelect" name="delivery" class="delivery__form">
-				<option class="delivery__curier" data-asset="./img/motoNew.svg" value="1" ><img src="./img/moto.png" alt="">Доставка кур’єром</option>
+				<option class="delivery__curier" data-asset="./img/motoNew.svg" value="1" >Доставка кур’єром</option>
 				<option class="delivery__selfpickup" data-asset="./img/koshyk.svg"  value="2" selected >Самовивіз</option>
 			</select>
                   <!--<div class="curier__select select">
@@ -148,7 +147,7 @@
                     name="form[]"
                     data-error="Ошибка"
                     placeholder=" ваше імя"
-                    class="input"
+                    class="input__name"
                   />
                 </div>
               </div>
@@ -161,14 +160,14 @@
                     name="form[]"
                     data-error="Ошибка"
                     placeholder="Ввудіть номер телефону"
-                    class="input"
+                    class="input__number"
                   />
                 </div>
               </div>
             </div>
             <div class="page__aproove aproove">
 
-              <button class="aproove__btn"> підтвердити</button>
+              <button class="aproove__btn" id="requestButon"> підтвердити</button>
             </div>
           </div>
         </section>

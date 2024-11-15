@@ -39,7 +39,7 @@ function initSliders() {
 			//observer: true,
 			//observeParents: true,
 			//slidesPerView: 2.5, // зміниться наповненість слайда на екрані універсально для найменшого і найбільшого мобайл екрану 2.4 super for desktop
-			//slidesPerGroup:3,
+			slidesPerGroup:1,
 			spaceBetween: 50,
 			autoHeight: true,
 			speed: 1400, //чим більше тим повільніше
@@ -99,16 +99,17 @@ if (document.querySelector('.inner')) { // Вказуємо склас потр�
 		// Підключаємо модулі слайдера
 		// для конкретного випадку
 		modules: [Navigation, Autoplay],
-		observer: true,
-		observeParents: true,
-		slidesPerView: 3, // зміниться наповненість слайда на екрані
-		spaceBetween: 10,
+		//observer: true,
+		//observeParents: true,
+		slidesPerView: 3,
+		//swiperPerGroup:1, // зміниться наповненість слайда на екрані
+		spaceBetween: 5,
 		//autoHeight: true,
 		speed: 800,
 		//direction: 'vertical',
 		//touchRatio: 0,
-		//simulateTouch: false,
-		centeredSlides:true,
+		simulateTouch: true,
+		//centeredSlides:true,
 		loop: true,
 		//preloadImages: false,
 		//lazy: true,
@@ -116,7 +117,7 @@ if (document.querySelector('.inner')) { // Вказуємо склас потр�
 		
 		autoplay: {
 			delay: 3000,
-			disableOnInteraction: false,
+			disableOnInteraction: true,
 		},
 		
 
