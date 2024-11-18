@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Popka2004',
-  database: 'October_7'
+  password: 'Popka2004',  // замініть на ваш пароль
+  database: 'October_7'   // замініть на вашу базу даних
 });
 
 db.connect(err => {
@@ -33,11 +33,33 @@ app.get('/dishes', (req, res) => {
   });
 });
 
+// Додати нову страву до бази даних
+app.post('/dishes', (req, res) => {
+  const { name, caption, image_url, price, order_number, category_id } = req.body;
+
+  if (!name || !price) {
+    return res.status(400).send('Назва та ціна є обов\'язковими');
+  }
+
+  const insertQuery = `
+    INSERT INTO dishes (name, caption, image_url, price, order_number, category_id)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  db.query(insertQuery, [name, caption, image_url, price, order_number, category_id], (err, result) => {
+    if (err) {
+      console.error('Помилка додавання страви:', err);
+      res.status(500).send('Помилка сервера');
+      return;
+    }
+    console.log('Страва додана, ID:', result.insertId);
+    res.sendStatus(200);
+  });
+});
+
 // Додати вибрані страви до таблиці теперішніх страв
 app.post('/current_dishes', (req, res) => {
   const { selectedDishes } = req.body;
 
-  // Спочатку обнуляємо всі значення колонки `present`
   const resetQuery = 'UPDATE dishes SET present = 0';
   db.query(resetQuery, (resetErr) => {
     if (resetErr) {
@@ -45,7 +67,6 @@ app.post('/current_dishes', (req, res) => {
       return res.status(500).send('Помилка скидання значень');
     }
 
-    // Оновлюємо тільки вибрані страви, встановлюючи present = 1
     if (selectedDishes.length > 0) {
       const updateQuery = `UPDATE dishes SET present = 1 WHERE id IN (?)`;
       db.query(updateQuery, [selectedDishes], (updateErr) => {
@@ -54,7 +75,6 @@ app.post('/current_dishes', (req, res) => {
           return res.status(500).send('Помилка оновлення значень');
         }
 
-        // Очищаємо таблицю present_dishes
         const deleteQuery = `DELETE FROM present_dishes`;
         db.query(deleteQuery, (deleteErr) => {
           if (deleteErr) {
@@ -62,7 +82,6 @@ app.post('/current_dishes', (req, res) => {
             return res.status(500).send('Помилка видалення даних');
           }
 
-          // Вставляємо нові дані з таблиці dishes, де present = 1
           const insertPresentDishesQuery = `
             INSERT INTO present_dishes (dish_id, name, caption, image_url, price, order_number, category_id, present, updated)
             SELECT id, name, caption, image_url, price, order_number, category_id, present, UNIX_TIMESTAMP()
@@ -78,7 +97,6 @@ app.post('/current_dishes', (req, res) => {
         });
       });
     } else {
-      // Якщо жодна страва не вибрана, очищуємо таблицю present_dishes
       db.query('DELETE FROM present_dishes', (err) => {
         if (err) {
           console.error('Помилка очищення present_dishes:', err);
@@ -128,6 +146,10 @@ app.get('/dishes/:id', (req, res) => {
 app.put('/dishes/:id', (req, res) => {
   const dishId = req.params.id;
   const { name, caption, image_url, price, order_number, category_id } = req.body;
+
+  if (!name || !price) {
+    return res.status(400).send('Назва та ціна є обов\'язковими');
+  }
 
   const updateQuery = `
     UPDATE dishes SET name = ?, caption = ?, image_url = ?, price = ?, order_number = ?, category_id = ?
